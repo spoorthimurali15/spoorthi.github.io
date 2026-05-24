@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spoorthi M — Academic Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fafaf8;
+  --surface:#ffffff;
+  --ink:#1c1b18;
+  --ink2:#4a4843;
+  --ink3:#8a8880;
+  --rule:#e2e0d8;
+  --rule2:#ccc9bf;
+  --accent:#1a3a5c;
+  --accent2:#2563a0;
+  --accent-bg:#eef3f9;
+  --tag:#f0ede4;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7}
+
+/* ── TOP BAR ── */
+header{
+  background:var(--accent);
+  color:#fff;
+  padding:0 3rem;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:99;
+}
+.hdr-name{font-family:var(--serif);font-size:1rem;letter-spacing:0.01em;opacity:0.95}
+.hdr-nav{display:flex;gap:2rem;list-style:none}
+.hdr-nav a{color:rgba(255,255,255,0.72);text-decoration:none;font-size:0.8rem;font-weight:400;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.15s}
+.hdr-nav a:hover{color:#fff}
+
+/* ── HERO / PROFILE ── */
+.profile-wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:3.5rem 2rem 2.5rem;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:2.5rem;
+  align-items:start;
+  border-bottom:1px solid var(--rule);
+}
+.avatar{
+  width:120px;height:120px;border-radius:50%;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:2.6rem;color:#fff;
+  flex-shrink:0;
+  border:3px solid #fff;
+  box-shadow:0 0 0 1px var(--rule2);
+}
+.profile-name{font-family:var(--serif);font-size:2rem;color:var(--ink);line-height:1.15;margin-bottom:0.3rem}
+.profile-position{font-size:0.92rem;color:var(--ink2);margin-bottom:0.15rem}
+.profile-affil{font-size:0.92rem;color:var(--ink2);margin-bottom:1rem}
+.profile-affil span{color:var(--accent2);font-weight:500}
+.profile-links{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.2rem}
+.plink{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:0.78rem;font-weight:500;letter-spacing:0.03em;
+  color:var(--accent2);text-decoration:none;
+  border:1px solid #b8d0e8;background:var(--accent-bg);
+  padding:3px 10px;border-radius:2px;
+  transition:background 0.15s,border-color 0.15s;
+}
+.plink:hover{background:#dceaf5;border-color:#90b8d8}
+.profile-bio{font-size:0.95rem;color:var(--ink2);line-height:1.75;max-width:600px}
+
+/* ── LAYOUT ── */
+.page{max-width:900px;margin:0 auto;padding:0 2rem 4rem;display:grid;grid-template-columns:1fr 220px;gap:3rem;align-items:start;padding-top:2.5rem}
+.main-col{}
+.side-col{}
+
+/* ── SECTION ── */
+.sec{margin-bottom:2.8rem}
+.sec-title{
+  font-family:var(--serif);font-size:1.15rem;color:var(--accent);
+  border-bottom:2px solid var(--accent);
+  padding-bottom:0.35rem;margin-bottom:1.4rem;
+  letter-spacing:0.01em;
+}
+
+/* ── RESEARCH INTERESTS ── */
+.interest-grid{display:flex;flex-wrap:wrap;gap:8px}
+.itag{
+  background:var(--accent-bg);border:1px solid #b8d0e8;
+  color:var(--accent);padding:4px 12px;border-radius:2px;
+  font-size:0.82rem;font-weight:500;
+}
+
+/* ── PUBLICATIONS ── */
+.pub-list{display:flex;flex-direction:column;gap:1.4rem}
+.pub{
+  background:var(--surface);border:1px solid var(--rule);
+  border-left:3px solid var(--accent2);
+  border-radius:0 3px 3px 0;
+  padding:1rem 1.25rem;
+}
+.pub-title{font-weight:600;font-size:0.93rem;color:var(--ink);line-height:1.4;margin-bottom:0.3rem}
+.pub-authors{font-size:0.82rem;color:var(--ink3);margin-bottom:0.2rem}
+.pub-venue{font-size:0.82rem;color:var(--ink2);font-style:italic;margin-bottom:0.5rem}
+.pub-venue strong{font-style:normal;font-weight:600;color:var(--accent2)}
+.pub-abstract{font-size:0.82rem;color:var(--ink2);line-height:1.65}
+.pub-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.6rem}
+.ptag{background:var(--tag);color:var(--ink2);font-size:0.72rem;padding:2px 8px;border-radius:2px;font-weight:400}
+.under-review{
+  display:inline-flex;align-items:center;gap:4px;
+  background:#fef9ec;border:1px solid #f0d060;color:#8a6c00;
+  font-size:0.72rem;font-weight:600;padding:2px 8px;border-radius:2px;
+  letter-spacing:0.03em;text-transform:uppercase;
+}
+
+/* ── RESEARCH PROJECTS ── */
+.proj-list{display:flex;flex-direction:column;gap:1.4rem}
+.proj{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:1.1rem 1.25rem}
+.proj-header{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:0.3rem}
+.proj-title{font-weight:600;font-size:0.92rem;color:var(--ink);line-height:1.35}
+.proj-date{font-size:0.75rem;color:var(--ink3);white-space:nowrap;letter-spacing:0.02em}
+.proj-assoc{font-size:0.78rem;color:var(--accent2);margin-bottom:0.45rem;font-weight:500}
+.proj-desc{font-size:0.83rem;color:var(--ink2);line-height:1.65}
+.proj-highlight{
+  margin-top:0.6rem;background:var(--accent-bg);border-left:2px solid var(--accent2);
+  padding:0.45rem 0.7rem;border-radius:0 2px 2px 0;
+  font-size:0.8rem;color:var(--accent);font-style:italic;
+}
+
+/* ── EXPERIENCE ── */
+.exp-list{display:flex;flex-direction:column;gap:1.2rem}
+.exp{display:grid;grid-template-columns:auto 1fr;gap:0 1rem;align-items:start}
+.exp-dot{width:10px;height:10px;border-radius:50%;background:var(--accent2);margin-top:6px;flex-shrink:0;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--rule2)}
+.exp-role{font-weight:600;font-size:0.9rem;color:var(--ink);line-height:1.3}
+.exp-org{font-size:0.83rem;color:var(--accent2);font-weight:500}
+.exp-period{font-size:0.75rem;color:var(--ink3);margin-bottom:0.3rem}
+.exp-desc{font-size:0.82rem;color:var(--ink2);line-height:1.6}
+
+/* ── SIDE WIDGETS ── */
+.widget{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:1.1rem;margin-bottom:1.4rem}
+.widget-title{font-family:var(--serif);font-size:0.85rem;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:0.4rem;margin-bottom:0.9rem}
+
+.edu-item{margin-bottom:1rem}
+.edu-item:last-child{margin-bottom:0}
+.edu-deg{font-size:0.85rem;font-weight:600;color:var(--ink);line-height:1.3}
+.edu-uni{font-size:0.8rem;color:var(--accent2)}
+.edu-yr{font-size:0.75rem;color:var(--ink3)}
+
+.cert-list{display:flex;flex-direction:column;gap:6px}
+.cert{font-size:0.8rem;color:var(--ink2);padding-left:0.7rem;position:relative;line-height:1.4}
+.cert::before{content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent2)}
+
+.lang-list{display:flex;flex-direction:column;gap:5px}
+.lang-row{display:flex;justify-content:space-between;font-size:0.8rem}
+.lang-name{color:var(--ink2)}
+.lang-level{color:var(--ink3);font-style:italic}
+
+.skill-list{display:flex;flex-wrap:wrap;gap:5px}
+.skill{background:var(--tag);color:var(--ink2);font-size:0.75rem;padding:3px 8px;border-radius:2px}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--rule);
+  max-width:900px;margin:0 auto;
+  padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.78rem;color:var(--ink3);
+}
+footer a{color:var(--accent2);text-decoration:none}
+
+@media(max-width:700px){
+  header{padding:0 1rem}
+  .hdr-nav{display:none}
+  .profile-wrap{grid-template-columns:1fr;padding:2rem 1rem 1.5rem}
+  .avatar{width:80px;height:80px;font-size:1.8rem}
+  .page{grid-template-columns:1fr;padding:1.5rem 1rem 3rem}
+  footer{flex-direction:column;gap:4px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header>
+  <span class="hdr-name">Spoorthi M</span>
+  <ul class="hdr-nav">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<!-- PROFILE HEADER -->
+<div class="profile-wrap">
+  <div class="avatar">
+  <img src="Spoorthi_M.jpg" alt="Spoorthi M" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+  </div>
+  <div>
+    <h1 class="profile-name">Spoorthi M</h1>
+    <p class="profile-position">Advanced Application Engineering Analyst · Accenture</p>
+    <p class="profile-affil">B.Tech Computer Science · <span>Amrita Vishwa Vidyapeetham, Bangalore</span> · 2021–2025</p>
+    <div class="profile-links">
+      <a href="mailto:spoorthi.murali@gmail.com" class="plink">✉ spoorthi.murali@gmail.com</a>
+      <a href="https://www.linkedin.com/in/spoorthim-365905228" target="_blank" class="plink">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=nUhWjdIAAAAJ&hl=en&oi=ao" target="_blank" class="plink">Google Scholar</a>
+    </div>
+    <p class="profile-bio">
+      I am a computer science and engineering graduate currently working as an Advanced Application Engineering Analyst at Accenture. My primary research interests lie in computer vision, medical image analysis, and deep learning. My recent work includes developing an anatomy-regularized TensoRF framework for 3D lung nodule volumetry from sparse X-ray projections — integrating NeRF-based reconstruction, Beer–Lambert physics-based DRR simulation, and anatomy-aware regularization to achieve clinically actionable pulmonary nodule estimation without CT-level radiation exposure. I have also developed AMN, a hybrid dual-encoder architecture combining Swin Transformer and ResNet-50 for multi-class nuclei segmentation in histopathology, incorporating adaptive multi-scale feature fusion, boundary-aware learning, and uncertainty estimation for robust cross-domain generalization. I am deeply passionate about advancing AI for healthcare and am actively seeking PhD opportunities to pursue rigorous, long-term research in medical imaging and computational pathology.
+    </p>
+  </div>
+</div>
+
+<!-- MAIN PAGE GRID -->
+<div class="page">
+<div class="main-col">
+
+  <!-- RESEARCH INTERESTS -->
+  <section class="sec" id="research">
+    <h2 class="sec-title">Research Interests</h2>
+    <div class="interest-grid">
+      <span class="itag">Medical Image Analysis</span>
+      <span class="itag">Neural Radiance Fields (NeRF)</span>
+      <span class="itag">Computational Pathology</span>
+      <span class="itag">3D Reconstruction &amp; Volumetry</span>
+      <span class="itag">Deep Learning</span>
+      <span class="itag">Computer Vision</span>
+      <span class="itag">Transformer Architectures</span>
+      <span class="itag">Multi-task Learning</span>
+      <span class="itag">Natural Language Processing</span>
+      <span class="itag">Autonomous Perception</span>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="sec" id="publications">
+    <h2 class="sec-title">Publications</h2>
+    <p style="font-size:0.82rem;color:var(--ink3);margin-bottom:1.2rem;font-style:italic">Ordered by research relevance. * denotes primary interest area.</p>
+
+    <div style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.7rem;padding-bottom:0.3rem;border-bottom:1px dashed var(--rule)">Machine Learning &amp; NLP</div>
+    <div class="pub-list" style="margin-bottom:1.6rem">
+
+      <div class="pub">
+        <div class="pub-title">A Comparative Analysis of Black-Box and White-Box Models for IoT Botnet Detection *</div>
+        <div class="pub-authors">Spoorthi M et al.</div>
+        <div class="pub-venue"><strong>IEEEXplore</strong> · May 2024</div>
+        <div class="pub-abstract">Examines ML techniques for IoT botnet detection using a two-stage binary and multi-class classification approach on CTU-13 and N-BaIoT datasets. Demonstrates superior performance of LGBM and XGBoost for accurate and interpretable network threat detection.</div>
+        <div class="pub-tags"><span class="ptag">IoT Security</span><span class="ptag">Machine Learning</span><span class="ptag">Cybersecurity</span><span class="ptag">Botnet Detection</span></div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Unveiling Hidden Patterns: Clustering Algorithms on C Code Embedding *</div>
+        <div class="pub-authors">Spoorthi M et al.</div>
+        <div class="pub-venue"><strong>IEEEXplore</strong> · May 2024</div>
+        <div class="pub-abstract">Applies ML clustering (K-means, GMMs) to CodeBERT embeddings of C code to analyze structural patterns. Reveals that embeddings capture text similarity effectively while highlighting limitations for logic-based automated grading systems.</div>
+        <div class="pub-tags"><span class="ptag">Code Analysis</span><span class="ptag">BERT</span><span class="ptag">Clustering</span><span class="ptag">CodeBERT</span></div>
+      </div>
+
+    </div>
+
+    <div style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.7rem;padding-bottom:0.3rem;border-bottom:1px dashed var(--rule)">Cloud &amp; Systems</div>
+    <div class="pub-list" style="margin-bottom:1.6rem">
+
+      <div class="pub">
+        <div class="pub-title">Advancing Supply Chain Management: Cloud-Based Demand Forecasting Solutions</div>
+        <div class="pub-authors">Spoorthi M et al.</div>
+        <div class="pub-venue"><strong>IEEE</strong> · December 2024</div>
+        <div class="pub-abstract">Explores AWS-based demand forecasting for supply chain management using AWS Forecast and ML algorithms. Demonstrated scalable, cost-effective prediction of demand patterns with varying confidence levels for inventory optimization.</div>
+        <div class="pub-tags"><span class="ptag">Cloud Computing</span><span class="ptag">AWS</span><span class="ptag">Forecasting</span><span class="ptag">ML</span></div>
+      </div>
+
+    </div>
+
+    <div style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.7rem;padding-bottom:0.3rem;border-bottom:1px dashed var(--rule)">Programming Languages &amp; Web3</div>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-title">KannaDa — A Kannada-based Programming Language Interpreter using Lex and Yacc</div>
+        <div class="pub-authors">Spoorthi M et al.</div>
+        <div class="pub-venue"><strong>IEEE</strong> · June 2025</div>
+        <div class="pub-abstract">Developed a Kannada-based programming language interpreter aimed at democratizing coding for Kannada speakers. Integrates compiler design principles and NLP techniques to create syntax aligned with Kannada grammar, fostering cultural identity in technology.</div>
+        <div class="pub-tags"><span class="ptag">NLP</span><span class="ptag">Compiler Design</span><span class="ptag">Localization</span></div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Harnessing the Power of Web3: A Blockchain Approach to Crowdfunding</div>
+        <div class="pub-authors">Spoorthi M et al.</div>
+        <div class="pub-venue"><strong>IEEEXplore</strong> · July 2024</div>
+        <div class="pub-abstract">Proposes a blockchain-based decentralized crowdfunding application using Ethereum, Solidity smart contracts, and MetaMask wallets to ensure secure and transparent financial transactions without a central administrator.</div>
+        <div class="pub-tags"><span class="ptag">Blockchain</span><span class="ptag">Web3</span><span class="ptag">Smart Contracts</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CURRENT RESEARCH PROJECTS -->
+  <section class="sec" id="projects">
+    <h2 class="sec-title">Research Projects</h2>
+
+    <p style="font-size:0.82rem;color:var(--ink3);margin-bottom:1.2rem;font-style:italic">† Under journal/conference review</p>
+    <div class="proj-list">
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">Anatomy-Regularized TensoRF for Sparse-View Lung Nodule Volumetry from Digitally Reconstructed Radiographs <span class="under-review">† Under Review</span></div>
+          <span class="proj-date">Feb 2026 – May 2026</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Developed an advanced deep learning framework for 3D lung nodule reconstruction and volumetric analysis from only three orthogonal X-ray projections. Leveraged Neural Radiance Fields (NeRF) and TensoRF architectures to address sparse-view medical imaging challenges while minimizing radiation exposure from conventional CT scans. Implemented anatomy-aware regularization combining sparsity constraints and total variation smoothness. Integrated Beer–Lambert physics-based DRR simulation and CT preprocessing pipelines using the LIDC-IDRI dataset.</div>
+        <div class="proj-highlight">Identified and resolved a critical density parameterization issue in TensoRF for medical attenuation fields, significantly improving gradient flow and reconstruction stability. Achieved high volumetric correlation with radiologist-annotated ground truth.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">NeRF</span><span class="ptag">TensoRF</span><span class="ptag">Medical Imaging</span><span class="ptag">3D Reconstruction</span><span class="ptag">Lung Nodules</span><span class="ptag">LIDC-IDRI</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">AMN: Adaptive Multi-Scale Fusion Network with Boundary and Uncertainty Modeling for Nuclei Segmentation <span class="under-review">† Under Review</span></div>
+          <span class="proj-date">Feb 2026 – Apr 2026</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Developed a hybrid deep learning framework for multi-class nuclei segmentation in histopathology images using a dual-encoder architecture combining Swin Transformer and ResNet-50. Implemented an adaptive multi-scale fusion mechanism with channel-wise gating to dynamically combine transformer and CNN features. Designed a multi-task prediction framework incorporating segmentation, boundary detection, classification, and uncertainty estimation. Evaluated on CoNIC and MoNuSeg datasets with strong cross-domain generalization without retraining.</div>
+        <div class="proj-highlight">Introduced uncertainty-aware loss functions and boundary-aware learning strategies. Achieved robust performance across multiple nuclei classes in densely packed, class-imbalanced histopathology images.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">Swin Transformer</span><span class="ptag">Nuclei Segmentation</span><span class="ptag">CoNIC</span><span class="ptag">MoNuSeg</span><span class="ptag">Multi-task Learning</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">Addressing Unresolved Crimes in India: AI-Driven Insights for Effective Policymaking <span class="under-review">† Under Review</span></div>
+          <span class="proj-date">Jan 2026 – Mar 2026</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Developed an AI-powered crime analytics framework to analyze and categorize over 40,000 unresolved crime records from major Indian cities using the Falcon-7B-Instruct LLM. Performed automated crime classification, demographic analysis, temporal trend analysis, and geographic hotspot identification to assist policymakers and law enforcement agencies.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">LLM</span><span class="ptag">Falcon-7B</span><span class="ptag">Crime Analytics</span><span class="ptag">NLP</span><span class="ptag">Policy AI</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">WeedYOLO-MS: Lightweight Object Detector for Precision Agriculture in Cotton Fields</div>
+          <span class="proj-date">Jan 2025 – Apr 2025</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Developed a lightweight hybrid object detection framework integrating YOLOv9T backbone, a novel Multi-Block Spatial Attention (MBSA) module, and Swin-inspired token mixing for real-time weed detection under low-resolution and edge-device constraints. Trained on CottonWeedDet12 dataset, achieving strong detection with only 3.56M parameters and 15.6 GFLOPs — suitable for deployment on agricultural robots.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">YOLO</span><span class="ptag">Object Detection</span><span class="ptag">Precision Agriculture</span><span class="ptag">Edge AI</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">Evaluating BERT-Based Transformer Models for Improved Phishing Detection Using NLP Techniques</div>
+          <span class="proj-date">Jan 2026 – Mar 2026</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Designed and evaluated an intelligent phishing email detection system using transformer-based NLP architectures — BERT, RoBERTa, DistilBERT, and XLNet. Performed extensive text preprocessing, feature engineering, and dataset balancing on real-world email datasets. Implemented multiple data augmentation strategies including text paraphrasing, syntax transformation, semantic noise injection, and character-level perturbations to improve robustness against evolving phishing techniques. Extracted linguistic, stylistic, and semantic features using BERT embeddings with comprehensive comparative evaluation across models.</div>
+        <div class="proj-highlight">Demonstrated effectiveness of transformer architectures in detecting sophisticated phishing attempts, contributing to reduced cybersecurity risks through intelligent language-based threat detection.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">BERT</span><span class="ptag">RoBERTa</span><span class="ptag">DistilBERT</span><span class="ptag">XLNet</span><span class="ptag">Phishing Detection</span><span class="ptag">NLP</span><span class="ptag">Cybersecurity</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">Vision-Based Framework for Autonomous Driving in Agriculture Domains</div>
+          <span class="proj-date">Nov 2024 – Mar 2025</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Designed a fully vision-based autonomous navigation framework for agricultural and warehouse environments using ZED X stereo cameras, vSLAM, and the Nav2 framework. Performs real-time localization, 3D mapping, obstacle avoidance, and adaptive path planning without LiDAR sensors. Integrated stereo vision, IMU fusion, GNSS localization, waypoint navigation, and recovery fallback mechanisms for robust navigation in unstructured terrains. Supports crop monitoring, sprayer integration, and human detection for smart farming applications.</div>
+        <div class="proj-highlight">Eliminated dependency on expensive LiDAR hardware while maintaining robust real-world navigation across unstructured outdoor agricultural environments.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">Visual SLAM</span><span class="ptag">Autonomous Navigation</span><span class="ptag">ZED X</span><span class="ptag">Nav2</span><span class="ptag">Stereo Vision</span><span class="ptag">Smart Farming</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-header">
+          <div class="proj-title">Advanced Topic Modeling for Categorizing Software Vulnerabilities</div>
+          <span class="proj-date">Sep 2024 – Nov 2024</span>
+        </div>
+        <div class="proj-assoc">Amrita School of Engineering, Bangalore</div>
+        <div class="proj-desc">Explored advanced topic modeling and LLMs (BERTopic, CombinedTM, Top2Vec, Mixtral, Llama2) to analyze software vulnerabilities. Implemented using Hadoop and PySpark for big data processing, with dimensionality reduction and clustering to enhance interpretability for cybersecurity professionals.</div>
+        <div class="pub-tags" style="margin-top:0.6rem"><span class="ptag">BERTopic</span><span class="ptag">LLMs</span><span class="ptag">Vulnerability Analysis</span><span class="ptag">PySpark</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <h2 class="sec-title">Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">Advanced Application Engineering Analyst</div>
+          <div class="exp-org">Accenture</div>
+          <div class="exp-period">2025 – Present · Bengaluru, India</div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">Digital Technology Intern</div>
+          <div class="exp-org">GE Aerospace</div>
+          <div class="exp-period">Jan 2025 – Jun 2025 · 6 months</div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">Internship Trainee — Network Management Web App</div>
+          <div class="exp-org">Centre for Development of Telematics (C-DOT)</div>
+          <div class="exp-period">Jun 2024 – Jul 2024 · Bengaluru, India</div>
+          <div class="exp-desc">Built a comprehensive web application for real-time network monitoring, system performance analytics, and failure analysis using Java EE, JDBC, AngularJS, and MySQL.</div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">Data Science Intern — ML for 5G O-RAN</div>
+          <div class="exp-org">Centre for Development of Telematics (C-DOT)</div>
+          <div class="exp-period">Jul 2023 – Aug 2023 · Bengaluru, India</div>
+          <div class="exp-desc">Built ML solutions for 5G O-RAN use cases including context-based handover management for V2X, QoE/QoS optimization, indoor positioning on RAN, and energy saving — using Python and ML libraries.</div>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-role">Founder — NSDC Bengaluru Chapter</div>
+          <div class="exp-org">National Student Data Corp · Amrita Vishwa Vidyapeetham</div>
+          <div class="exp-period">Jan 2024 – Present</div>
+          <div class="exp-desc">Co-founded the Bengaluru chapter of NSDC to foster data science and engineering culture among students.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /main-col -->
+
+<!-- SIDEBAR -->
+<div class="side-col">
+
+  <div class="widget">
+    <div class="widget-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-deg">B.Tech · Computer Science &amp; Engineering</div>
+      <div class="edu-uni">Amrita Vishwa Vidyapeetham, Bangalore</div>
+      <div class="edu-yr">Sep 2021 – May 2025 · <strong style="color:var(--accent2)">CGPA 9.09 / 10</strong></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-deg">Pre-University (PUC) · Science</div>
+      <div class="edu-uni">Deeksha Centre for Learning</div>
+      <div class="edu-yr">2018 – 2020 · <strong style="color:var(--accent2)">89.3%</strong></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-deg">High School · ICSE Board</div>
+      <div class="edu-uni">Auden Public School</div>
+      <div class="edu-yr">Until 2018 · <strong style="color:var(--accent2)">96%</strong></div>
+    </div>
+  </div>
+
+  <div class="widget">
+    <div class="widget-title">Certifications</div>
+    <div class="cert-list">
+      <div class="cert">Cloud Computing</div>
+      <div class="cert">Complete SQL Bootcamp — Zero to Hero</div>
+      <div class="cert">100 Days of Code: Python Pro Bootcamp</div>
+      <div class="cert">C++ Programming — Beginner to Beyond</div>
+      <div class="cert">Complete Linux Training Course</div>
+    </div>
+  </div>
+
+  <div class="widget">
+    <div class="widget-title">Technical Skills</div>
+    <div class="skill-list">
+      <span class="skill">Python</span>
+      <span class="skill">PyTorch</span>
+      <span class="skill">TensorFlow</span>
+      <span class="skill">OpenCV</span>
+      <span class="skill">HuggingFace</span>
+      <span class="skill">BERT / Transformers</span>
+      <span class="skill">NeRF / TensoRF</span>
+      <span class="skill">AWS</span>
+      <span class="skill">Docker</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Java</span>
+      <span class="skill">PySpark</span>
+      <span class="skill">Git</span>
+      <span class="skill">Linux</span>
+    </div>
+  </div>
+
+  <div class="widget">
+    <div class="widget-title">Languages</div>
+    <div class="lang-list">
+      <div class="lang-row"><span class="lang-name">Kannada</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">Telugu</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Full Professional</span></div>
+      <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-level">Limited Working</span></div>
+    </div>
+  </div>
+
+  <div class="widget" id="contact">
+    <div class="widget-title">Contact</div>
+    <div style="display:flex;flex-direction:column;gap:7px">
+      <a href="mailto:spoorthi.murali@gmail.com" style="font-size:0.82rem;color:var(--accent2);text-decoration:none;word-break:break-all">spoorthi.murali@gmail.com</a>
+      <a href="https://www.linkedin.com/in/spoorthim-365905228" target="_blank" style="font-size:0.82rem;color:var(--accent2);text-decoration:none">linkedin.com/in/spoorthim</a>
+      <span style="font-size:0.78rem;color:var(--ink3)">Greater Bengaluru Area, India</span>
+    </div>
+  </div>
+
+</div><!-- /side-col -->
+</div><!-- /page -->
+
+<footer>
+  <span>Spoorthi M · Academic Profile</span>
+  <span>spoorthi.murali@gmail.com · Last updated May 2025</span>
+</footer>
+
+</body>
+</html>
